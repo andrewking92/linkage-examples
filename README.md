@@ -1,5 +1,4 @@
 # linkage-examples
-linkage-examples
 
 # JAR
 java -Dmongodb.uri="mongodb://localhost:27017" -Dmongodb.database="test" -Dmongodb.collection="Party" -jar target/linkage-examples-1.0-SNAPSHOT-jar-with-dependencies.jar
