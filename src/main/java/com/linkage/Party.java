@@ -19,7 +19,7 @@ import com.mongodb.ServerApiVersion;
 import org.bson.conversions.Bson;
 
 
-public class Linkage {
+public class Party {
     private static final String MONGODB_URI = System.getProperty("mongodb.uri");
     private static final String DATABASE_NAME = System.getProperty("mongodb.database");
     private static final String COLLECTION_NAME = System.getProperty("mongodb.collection");
@@ -48,7 +48,7 @@ public class Linkage {
             pipeline.add(Aggregates.match(Filters.in("partyID", partyIDs)));
 
             // Lookup stage
-            pipeline.add(Aggregates.lookup("Linkage", "partyID", "party.partyID", "linkage"));
+            pipeline.add(Aggregates.lookup("PSALinkage", "partyID", "party.partyID", "linkage"));
 
             // AddFields stage
             Document addFieldsStage = new Document("$addFields", new Document("accountKeys",
